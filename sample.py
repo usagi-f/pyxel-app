@@ -18,15 +18,18 @@ class App:
     def update(self): # フレーム更新
         self.update_cat()
 
-        # self.cat_x = (self.cat_x + 1) % pyxel.width
-        # self.cat_y = (self.cat_y + 1) % pyxel.width
-
     def update_cat(self): # 猫の移動
         if pyxel.btn(pyxel.KEY_LEFT):
-            self.x = 20
+            self.cat_x = self.cat_x - 2
 
         if pyxel.btn(pyxel.KEY_RIGHT):
-            self.x = 70
+            self.cat_x = self.cat_x + 2
+
+        if pyxel.btn(pyxel.KEY_UP):
+            self.cat_y = self.cat_y - 2
+
+        if pyxel.btn(pyxel.KEY_DOWN):
+            self.cat_y = self.cat_y + 2
 
     def draw(self): # 描画
         pyxel.cls(0)
